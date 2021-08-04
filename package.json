@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "workspaces": [
-    "@mdfjs/gatsby-theme",
+    "temp-gatsby-theme",
     "example"
   ],
   "devDependencies": {
