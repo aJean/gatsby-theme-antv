@@ -6,11 +6,11 @@
  */
 import React from 'react';
 interface SEOProps {
-  description?: string;
-  lang?: string;
-  meta?: any[];
-  title?: string;
-  titleSuffix?: string;
+    description?: string;
+    lang?: string;
+    meta?: any[];
+    title?: string;
+    titleSuffix?: string;
 }
 declare const SEO: React.FC<SEOProps>;
 export default SEO;

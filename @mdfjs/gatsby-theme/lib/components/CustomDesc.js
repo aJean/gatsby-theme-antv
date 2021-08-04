@@ -1,6 +1,6 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const CustomDesc = () => {
-  return null;
+    return null;
 };
 exports.default = CustomDesc;

@@ -69,7 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 .tmp
-@antv/gatsby-theme-antv/lib
+@mdfjs/gatsby-theme/lib
 
 dist
 package-lock.json
