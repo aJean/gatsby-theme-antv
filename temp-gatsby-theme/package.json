@@ -16,7 +16,7 @@
     "serve": "gatsby serve",
     "release": "release-it",
     "copy:components": "mkdir -p lib && cp -R .tmp/temp-gatsby-theme/site/components lib && cp site/components/*.less ./lib/components && cp site/common.json ./lib && cp -R site/images ./lib",
-    "compile:components": "rm -rf .tmp lib && ../../node_modules/.bin/tsc --outDir .tmp --noEmit false -d && npm run copy:components",
+    "compile:components": "rm -rf .tmp lib && ../node_modules/.bin/tsc --outDir .tmp --noEmit false -d && npm run copy:components",
     "test": ""
   },
   "repository": {
