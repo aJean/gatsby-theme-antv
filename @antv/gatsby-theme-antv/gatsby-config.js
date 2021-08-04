@@ -219,6 +219,7 @@ module.exports = ({
           path: path.resolve(pagesPath),
         },
       },
+      // 自动用 layout wrap 页面组件
       {
         resolve: `gatsby-plugin-layout`,
         options: {

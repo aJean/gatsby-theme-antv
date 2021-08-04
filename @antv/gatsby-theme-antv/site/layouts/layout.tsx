@@ -96,6 +96,7 @@ const Layout: React.FC<LayoutProps> = ({ children, location, footerProps }) => {
       }
     }
   `;
+  // 读取 locales 数据
   const { site, locales } = useStaticQuery(query);
   const {
     siteMetadata: {

@@ -124,6 +124,7 @@ exports.onCreateNode = ({
   }
 
   const resources = getLocaleResources();
+  // 创建 locales meta 数据，这里有个规定的配置文件就是 ./locale.json
   createNode({
     id: createNodeId(`locales`),
     parent: null,
