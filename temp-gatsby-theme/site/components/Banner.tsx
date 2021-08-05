@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Modal } from 'antd';
@@ -68,17 +68,7 @@ const Banner: React.FC<BannerProps> = ({
   const { site } = useStaticQuery(query);
   const { githubUrl } = site.siteMetadata;
 
-  const [remoteNews, setRemoteNews] = useState<NotificationProps[]>([]);
-
-  useEffect(() => {
-    fetch(notificationsUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setRemoteNews(data);
-      });
-  }, [notificationsUrl]);
-
-  const notificationsNode = (notifications || remoteNews)
+  const notificationsNode = (notifications || [])
     .slice(0, 2)
     .map((notification, i) => (
       <Notification index={i} key={i} {...notification} />
