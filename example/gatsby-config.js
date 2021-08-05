@@ -3,7 +3,7 @@ const { version, repository, homepage } = require('./package.json');
 module.exports = {
   plugins: [
     {
-      resolve: '@antv/gatsby-theme-antv',
+      resolve: 'temp-gatsby-theme',
       options: {
         GATrackingId: `UA-148148901-11`,
       },

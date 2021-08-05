@@ -1,11 +1,11 @@
 import React from 'react';
-import SEO from '@antv/gatsby-theme-antv/site/components/Seo';
+import SEO from 'temp-gatsby-theme/site/components/Seo';
 import { useTranslation } from 'react-i18next';
-import Banner from '@antv/gatsby-theme-antv/site/components/Banner';
-import Companies from '@antv/gatsby-theme-antv/site/components/Companies';
-import Features from '@antv/gatsby-theme-antv/site/components/Features';
-import Cases from '@antv/gatsby-theme-antv/site/components/Cases';
-import BannerSVG from '@antv/gatsby-theme-antv/site/components/BannerSVG';
+import Banner from 'temp-gatsby-theme/site/components/Banner';
+import Companies from 'temp-gatsby-theme/site/components/Companies';
+import Features from 'temp-gatsby-theme/site/components/Features';
+import Cases from 'temp-gatsby-theme/site/components/Cases';
+import BannerSVG from 'temp-gatsby-theme/site/components/BannerSVG';
 
 const IndexPage: React.FC = () => {
   const { t, i18n } = useTranslation();
