@@ -74,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({
               <a href={llinks.wb} target="_blank" rel="noopener noreferrer">
                 <WeiboOutlined />
               </a>
-              <a href={links.zh} target="_blank" rel="noopener noreferrer">
+              <a href={llinks.zh} target="_blank" rel="noopener noreferrer">
                 <ZhihuOutlined />
               </a>
               <a href={llinks.git} target="_blank" rel="noopener noreferrer">
