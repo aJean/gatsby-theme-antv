@@ -13,24 +13,31 @@ import styles from './Footer.module.less';
 import 'rc-footer/assets/index.less';
 
 interface FooterProps extends RcFooterProps {
-  rootDomain?: string;
   language?: string;
   githubUrl?: string;
+  links?: any;
   location: Location;
 }
 
 const Footer: React.FC<FooterProps> = ({
   columns,
-  bottom,
+  links,
   theme = 'dark',
   language,
-  rootDomain = '',
   location,
   ...restProps
 }) => {
   const [withMenu, setWithMenu] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
-  const lang = language || i18n.language;
+  const llinks = Object.assign(
+    {
+      wb: 'https://online.ai101test.com',
+      zh: 'https://online.ai101test.com',
+      git: 'https://git.100tal.com/jituan_101_web/101console',
+      we: 'https://online.ai101test.com',
+    },
+    links,
+  );
 
   useEffect(() => {
     // 有 menu 的模版 footer 表现不同，通过 location 判断加载的模版
@@ -61,47 +68,27 @@ const Footer: React.FC<FooterProps> = ({
         [styles.withMenu]: withMenu,
       })}
       bottom={
-        bottom || (
-          <>
-            <div className={styles.bottom}>
-              <div>
-                <a
-                  href="https://online.ai101test.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <WeiboOutlined />
-                </a>
-                <a
-                  href="https://online.ai101test.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <ZhihuOutlined />
-                </a>
-                <a
-                  href="https://git.100tal.com/jituan_101_web/101console"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GithubOutlined />
-                </a>
-                <a href="https://online.ai101test.com">{t('关于我们')}</a>
-                <a
-                  href="https://fe.ai101test.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('测试地址')}
-                </a>
-              </div>
-              <div>
-                © {new Date().getFullYear()} Made with ❤ by{' '}
-                <a href="https://github.com/aJean">qy</a>
-              </div>
+        <>
+          <div className={styles.bottom}>
+            <div>
+              <a href={llinks.wb} target="_blank" rel="noopener noreferrer">
+                <WeiboOutlined />
+              </a>
+              <a href={links.zh} target="_blank" rel="noopener noreferrer">
+                <ZhihuOutlined />
+              </a>
+              <a href={llinks.git} target="_blank" rel="noopener noreferrer">
+                <GithubOutlined />
+              </a>
+              <a href={llinks.we}>{t('关于我们')}</a>
             </div>
-          </>
-        )
+            <div>
+              © {new Date().getFullYear()} Made with ❤
+              <span className={styles.by}>by</span>
+              <a href="https://github.com/aJean">qy</a>
+            </div>
+          </div>
+        </>
       }
       {...omit(restProps, ['githubUrl'])}
     />
