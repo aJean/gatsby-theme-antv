@@ -221,7 +221,7 @@ const Header: React.FC<HeaderProps> = ({
     chinaMirrorUrl = `https://antv-${name}.gitee.io`;
   }
 
-  const logoLink = siteUrl;
+  const logoLink = siteUrl || 'javaScript:;';
 
   const [chinaMirrorHintVisible, updateChinaMirrorHintVisible] =
     useState(false);
