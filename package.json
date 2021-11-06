@@ -3,10 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/antvis/gatsby-theme-antv"
-  },
-  "bugs": {
-    "url": "https://github.com/antvis/gatsby-theme-antv/issues"
+    "url": "https://github.com/aJean/temp-gatsby-theme"
   },
   "license": "MIT",
   "workspaces": [
