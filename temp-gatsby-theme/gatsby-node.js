@@ -376,7 +376,7 @@ exports.createPages = async ({ actions, graphql, reporter, store }) => {
 };
 
 exports.onCreateWebpackConfig = (
-  { getConfig, stage, actions },
+  { getConfig, stage, actions, loaders },
   { codeSplit },
 ) => {
   const config = getConfig();
@@ -393,6 +393,20 @@ exports.onCreateWebpackConfig = (
         maxChunks: 1,
       }),
     );
+  }
+
+  // 第三方 lib ssr dom 处理
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /react-json-view/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
   }
 
   actions.setWebpackConfig({
